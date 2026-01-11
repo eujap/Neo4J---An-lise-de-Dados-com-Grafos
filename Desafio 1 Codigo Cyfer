@@ -1,0 +1,92 @@
+Codigo gerado pelo Arrows app.
+
+CREATE (:actor)-[:ACTED_IN]->(`Breaking Bad`:Serie {seasons: 5, ``: ""})<-[:DIRECTED]-(:director),
+(`Ação`:Genre)<-[:IN_GENRE]-(`The Dark knight`:movie {year: 2008})<-[:DIRECTED]-(`Christopher Nolan`:director)-[:DIRECTED]->(Inception:movie {year: 2010})-[:IN_GENRE]->(` Ficção científica`:Genre)<-[:IN_GENRE]-(`The Matrix`:movie {year: 1999})<-[:DIRECTED]-(:director),
+(:actor)-[:ACTED_IN]->(Inception)<-[:ACTED_IN]-(:actor),
+(:actor)-[:ACTED_IN]->(Inception)-[:IN_GENRE]->(`Ação`)<-[:IN_GENRE]-(`The Matrix`)<-[:DIRECTED]-(:director),
+(:actor)-[:ACTED_IN]->(`Criminal Minds `:Serie {seasons: 18})-[:IN_GENRE]->(Drama:Genre)<-[:IN_GENRE]-(`Breaking Bad`)-[:IN_GENRE]->(Crime:Genre)<-[:IN_GENRE]-(`Criminal Minds `)<-[:ACTED_IN]-(:actor),
+(:actor)-[:ACTED_IN]->(Parasite:movie {year: 2019})-[:IN_GENRE]->(:Genre)<-[:IN_GENRE]-(`Pulp Fiction`:movie {year: 1994})-[:IN_GENRE]->(Crime)<-[:IN_GENRE]-(Dexter:Serie {seasons: 8})-[:IN_GENRE]->(Drama)<-[:IN_GENRE]-(`The Killing`:Serie {seasons: 4})-[:IN_GENRE]->(Crime)<-[:IN_GENRE]-(`The Dark knight`)<-[:ACTED_IN]-(:actor),
+(:actor)-[:ACTED_IN]->(Dexter)<-[:ACTED_IN]-(:actor),
+(:director)-[:DIRECTED]->(Dexter)<-[:WATCHED {rating: 4.7}]-(`João`:user {nome: ""}),
+(:director)-[:DIRECTED]->(`Criminal Minds `)<-[:WATCHED {rating: 5}]-(:user {nome: ""})-[:WATCHED {rating: 5}]->(` Central do Brasil`:movie {year: 1998}),
+(:actor)-[:ACTED_IN]->(`The Matrix`)<-[:ACTED_IN]-(:actor),
+(:user {nome: ""})-[:WATCHED {rating: 5}]->(Inception)<-[:ACTED_IN]-(:actor)-[:ACTED_IN]->(`The Dark knight`)<-[:WATCHED {rating: 4.9}]-(:user {nome: ""}),
+(:director)-[:DIRECTED]->(`Pulp Fiction`)<-[:ACTED_IN]-(:actor),
+(:actor)-[:ACTED_IN]->(`Pulp Fiction`)<-[:WATCHED {rating: 4}]-(:user {nome: ""}),
+(`Christopher Nolan`)-[:DIRECTED]->(Interstellar:movie {year: 2014})<-[:ACTED_IN]-(:actor),
+(:actor)-[:ACTED_IN]->(Interstellar)-[:IN_GENRE]->(` Ficção científica`),
+(:user {nome: ""})-[:WATCHED {rating: 5}]->(Interstellar)-[:IN_GENRE]->(:Genre)<-[:IN_GENRE]-(` O Auto da Compadecida`:movie {year: 2000})<-[:WATCHED {`rating `: 4.5}]-(Elena:user {nome: ""})-[:WATCHED {rating: 3.9}]->(`O Pagador de Promessas`:movie {year: 1962}),
+(:actor)-[:ACTED_IN]->(Parasite)-[:IN_GENRE]->(:Genre)<-[:IN_GENRE]-(` O Auto da Compadecida`),
+(:director)-[:DIRECTED]->(Parasite)<-[:WATCHED {rating: 4.2}]-(:user {nome: ""}),
+(:actor)-[:ACTED_IN]->(` Central do Brasil`)-[:IN_GENRE]->(Drama)<-[:IN_GENRE]-(`Cidade de Deus `:movie {year: 2002})-[:IN_GENRE]->(Crime),
+(:actor)-[:ACTED_IN]->(` Central do Brasil`)<-[:DIRECTED]-(:director),
+(:actor)-[:ACTED_IN]->(`Cidade de Deus `)<-[:ACTED_IN]-(:actor),
+(:director)-[:DIRECTED]->(`Cidade de Deus `)<-[:DIRECTED]-(:director),
+(:director)-[:DIRECTED]->(`O Pagador de Promessas`)-[:IN_GENRE]->(Drama),
+(:actor)-[:ACTED_IN]->(`O Pagador de Promessas`)<-[:ACTED_IN]-(:actor),
+(:director)-[:DIRECTED]->(` O Auto da Compadecida`),
+(:user {nome: ""})-[:WATCHED {rating: 4}]->(`The Matrix`),
+(:user {nome: ""})-[:WATCHED {rating: 5}]->(`Breaking Bad`),
+(`João`)-[:WATCHED {rating: 4.7}]->(`The Killing`),
+(Elena)-[:WATCHED {rating: 4}]->(`Cidade de Deus `);
+
+MATCH path0 = (:actor)-[:ACTED_IN]->(`Breaking Bad`:Serie {seasons: 5, ``: ""})<-[:DIRECTED]-(:director),
+path1 = (`Ação`:Genre)<-[:IN_GENRE]-(`The Dark knight`:movie {year: 2008})<-[:DIRECTED]-(`Christopher Nolan`:director)-[:DIRECTED]->(Inception:movie {year: 2010})-[:IN_GENRE]->(` Ficção científica`:Genre)<-[:IN_GENRE]-(`The Matrix`:movie {year: 1999})<-[:DIRECTED]-(:director),
+path2 = (:actor)-[:ACTED_IN]->(Inception)<-[:ACTED_IN]-(:actor),
+path3 = (:actor)-[:ACTED_IN]->(Inception)-[:IN_GENRE]->(`Ação`)<-[:IN_GENRE]-(`The Matrix`)<-[:DIRECTED]-(:director),
+path4 = (:actor)-[:ACTED_IN]->(`Criminal Minds `:Serie {seasons: 18})-[:IN_GENRE]->(Drama:Genre)<-[:IN_GENRE]-(`Breaking Bad`)-[:IN_GENRE]->(Crime:Genre)<-[:IN_GENRE]-(`Criminal Minds `)<-[:ACTED_IN]-(:actor),
+path5 = (:actor)-[:ACTED_IN]->(Parasite:movie {year: 2019})-[:IN_GENRE]->(:Genre)<-[:IN_GENRE]-(`Pulp Fiction`:movie {year: 1994})-[:IN_GENRE]->(Crime)<-[:IN_GENRE]-(Dexter:Serie {seasons: 8})-[:IN_GENRE]->(Drama)<-[:IN_GENRE]-(`The Killing`:Serie {seasons: 4})-[:IN_GENRE]->(Crime)<-[:IN_GENRE]-(`The Dark knight`)<-[:ACTED_IN]-(:actor),
+path6 = (:actor)-[:ACTED_IN]->(Dexter)<-[:ACTED_IN]-(:actor),
+path7 = (:director)-[:DIRECTED]->(Dexter)<-[:WATCHED {rating: 4.7}]-(`João`:user {nome: ""}),
+path8 = (:director)-[:DIRECTED]->(`Criminal Minds `)<-[:WATCHED {rating: 5}]-(:user {nome: ""})-[:WATCHED {rating: 5}]->(` Central do Brasil`:movie {year: 1998}),
+path9 = (:actor)-[:ACTED_IN]->(`The Matrix`)<-[:ACTED_IN]-(:actor),
+path10 = (:user {nome: ""})-[:WATCHED {rating: 5}]->(Inception)<-[:ACTED_IN]-(:actor)-[:ACTED_IN]->(`The Dark knight`)<-[:WATCHED {rating: 4.9}]-(:user {nome: ""}),
+path11 = (:director)-[:DIRECTED]->(`Pulp Fiction`)<-[:ACTED_IN]-(:actor),
+path12 = (:actor)-[:ACTED_IN]->(`Pulp Fiction`)<-[:WATCHED {rating: 4}]-(:user {nome: ""}),
+path13 = (`Christopher Nolan`)-[:DIRECTED]->(Interstellar:movie {year: 2014})<-[:ACTED_IN]-(:actor),
+path14 = (:actor)-[:ACTED_IN]->(Interstellar)-[:IN_GENRE]->(` Ficção científica`),
+path15 = (:user {nome: ""})-[:WATCHED {rating: 5}]->(Interstellar)-[:IN_GENRE]->(:Genre)<-[:IN_GENRE]-(` O Auto da Compadecida`:movie {year: 2000})<-[:WATCHED {`rating `: 4.5}]-(Elena:user {nome: ""})-[:WATCHED {rating: 3.9}]->(`O Pagador de Promessas`:movie {year: 1962}),
+path16 = (:actor)-[:ACTED_IN]->(Parasite)-[:IN_GENRE]->(:Genre)<-[:IN_GENRE]-(` O Auto da Compadecida`),
+path17 = (:director)-[:DIRECTED]->(Parasite)<-[:WATCHED {rating: 4.2}]-(:user {nome: ""}),
+path18 = (:actor)-[:ACTED_IN]->(` Central do Brasil`)-[:IN_GENRE]->(Drama)<-[:IN_GENRE]-(`Cidade de Deus `:movie {year: 2002})-[:IN_GENRE]->(Crime),
+path19 = (:actor)-[:ACTED_IN]->(` Central do Brasil`)<-[:DIRECTED]-(:director),
+path20 = (:actor)-[:ACTED_IN]->(`Cidade de Deus `)<-[:ACTED_IN]-(:actor),
+path21 = (:director)-[:DIRECTED]->(`Cidade de Deus `)<-[:DIRECTED]-(:director),
+path22 = (:director)-[:DIRECTED]->(`O Pagador de Promessas`)-[:IN_GENRE]->(Drama),
+path23 = (:actor)-[:ACTED_IN]->(`O Pagador de Promessas`)<-[:ACTED_IN]-(:actor),
+path24 = (:director)-[:DIRECTED]->(` O Auto da Compadecida`),
+path25 = (:user {nome: ""})-[:WATCHED {rating: 4}]->(`The Matrix`),
+path26 = (:user {nome: ""})-[:WATCHED {rating: 5}]->(`Breaking Bad`),
+path27 = (`João`)-[:WATCHED {rating: 4.7}]->(`The Killing`),
+path28 = (Elena)-[:WATCHED {rating: 4}]->(`Cidade de Deus `)
+RETURN path0, path1, path2, path3, path4, path5, path6, path7, path8, path9, path10, path11, path12, path13, path14, path15, path16, path17, path18, path19, path20, path21, path22, path23, path24, path25, path26, path27, path28;
+
+MERGE (:actor)-[:ACTED_IN]->(`Breaking Bad`:Serie {seasons: 5, ``: ""})<-[:DIRECTED]-(:director)
+MERGE (`Ação`:Genre)<-[:IN_GENRE]-(`The Dark knight`:movie {year: 2008})<-[:DIRECTED]-(`Christopher Nolan`:director)-[:DIRECTED]->(Inception:movie {year: 2010})-[:IN_GENRE]->(` Ficção científica`:Genre)<-[:IN_GENRE]-(`The Matrix`:movie {year: 1999})<-[:DIRECTED]-(:director)
+MERGE (:actor)-[:ACTED_IN]->(Inception)<-[:ACTED_IN]-(:actor)
+MERGE (:actor)-[:ACTED_IN]->(Inception)-[:IN_GENRE]->(`Ação`)<-[:IN_GENRE]-(`The Matrix`)<-[:DIRECTED]-(:director)
+MERGE (:actor)-[:ACTED_IN]->(`Criminal Minds `:Serie {seasons: 18})-[:IN_GENRE]->(Drama:Genre)<-[:IN_GENRE]-(`Breaking Bad`)-[:IN_GENRE]->(Crime:Genre)<-[:IN_GENRE]-(`Criminal Minds `)<-[:ACTED_IN]-(:actor)
+MERGE (:actor)-[:ACTED_IN]->(Parasite:movie {year: 2019})-[:IN_GENRE]->(:Genre)<-[:IN_GENRE]-(`Pulp Fiction`:movie {year: 1994})-[:IN_GENRE]->(Crime)<-[:IN_GENRE]-(Dexter:Serie {seasons: 8})-[:IN_GENRE]->(Drama)<-[:IN_GENRE]-(`The Killing`:Serie {seasons: 4})-[:IN_GENRE]->(Crime)<-[:IN_GENRE]-(`The Dark knight`)<-[:ACTED_IN]-(:actor)
+MERGE (:actor)-[:ACTED_IN]->(Dexter)<-[:ACTED_IN]-(:actor)
+MERGE (:director)-[:DIRECTED]->(Dexter)<-[:WATCHED {rating: 4.7}]-(`João`:user {nome: ""})
+MERGE (:director)-[:DIRECTED]->(`Criminal Minds `)<-[:WATCHED {rating: 5}]-(:user {nome: ""})-[:WATCHED {rating: 5}]->(` Central do Brasil`:movie {year: 1998})
+MERGE (:actor)-[:ACTED_IN]->(`The Matrix`)<-[:ACTED_IN]-(:actor)
+MERGE (:user {nome: ""})-[:WATCHED {rating: 5}]->(Inception)<-[:ACTED_IN]-(:actor)-[:ACTED_IN]->(`The Dark knight`)<-[:WATCHED {rating: 4.9}]-(:user {nome: ""})
+MERGE (:director)-[:DIRECTED]->(`Pulp Fiction`)<-[:ACTED_IN]-(:actor)
+MERGE (:actor)-[:ACTED_IN]->(`Pulp Fiction`)<-[:WATCHED {rating: 4}]-(:user {nome: ""})
+MERGE (`Christopher Nolan`)-[:DIRECTED]->(Interstellar:movie {year: 2014})<-[:ACTED_IN]-(:actor)
+MERGE (:actor)-[:ACTED_IN]->(Interstellar)-[:IN_GENRE]->(` Ficção científica`)
+MERGE (:user {nome: ""})-[:WATCHED {rating: 5}]->(Interstellar)-[:IN_GENRE]->(:Genre)<-[:IN_GENRE]-(` O Auto da Compadecida`:movie {year: 2000})<-[:WATCHED {`rating `: 4.5}]-(Elena:user {nome: ""})-[:WATCHED {rating: 3.9}]->(`O Pagador de Promessas`:movie {year: 1962})
+MERGE (:actor)-[:ACTED_IN]->(Parasite)-[:IN_GENRE]->(:Genre)<-[:IN_GENRE]-(` O Auto da Compadecida`)
+MERGE (:director)-[:DIRECTED]->(Parasite)<-[:WATCHED {rating: 4.2}]-(:user {nome: ""})
+MERGE (:actor)-[:ACTED_IN]->(` Central do Brasil`)-[:IN_GENRE]->(Drama)<-[:IN_GENRE]-(`Cidade de Deus `:movie {year: 2002})-[:IN_GENRE]->(Crime)
+MERGE (:actor)-[:ACTED_IN]->(` Central do Brasil`)<-[:DIRECTED]-(:director)
+MERGE (:actor)-[:ACTED_IN]->(`Cidade de Deus `)<-[:ACTED_IN]-(:actor)
+MERGE (:director)-[:DIRECTED]->(`Cidade de Deus `)<-[:DIRECTED]-(:director)
+MERGE (:director)-[:DIRECTED]->(`O Pagador de Promessas`)-[:IN_GENRE]->(Drama)
+MERGE (:actor)-[:ACTED_IN]->(`O Pagador de Promessas`)<-[:ACTED_IN]-(:actor)
+MERGE (:director)-[:DIRECTED]->(` O Auto da Compadecida`)
+MERGE (:user {nome: ""})-[:WATCHED {rating: 4}]->(`The Matrix`)
+MERGE (:user {nome: ""})-[:WATCHED {rating: 5}]->(`Breaking Bad`)
+MERGE (`João`)-[:WATCHED {rating: 4.7}]->(`The Killing`)
+MERGE (Elena)-[:WATCHED {rating: 4}]->(`Cidade de Deus `)
